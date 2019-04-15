@@ -79,4 +79,9 @@ $(() => {
     $('.pokemon-display-box').children().eq(currentPokeIndex).show();
   })
 
+  $('button').on('click', () => {
+    $('.page1').hide();
+    $('.page2').show();
+  })
+
 })

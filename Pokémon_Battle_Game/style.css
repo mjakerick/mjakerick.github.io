@@ -4,7 +4,6 @@
 }
 
 .previous img{
-  /* padding-top: 100%; */
   height: 30px;
   width: 30px;
 }
@@ -29,7 +28,10 @@
 }
 
 .next img{
-  /* padding-top: 100%; */
   height: 30px;
   width: 30px;
+}
+
+.page2 {
+  display: none;
 }

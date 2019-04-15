@@ -13,24 +13,45 @@
   <header>
 
   </header>
-  <div class="choose-pokemon">
-    <h1>Choose Your Pokémon!</h1>
+  <div class="page1">
+    <div class="choose-pokemon">
+      <h1>Choose Your Pokémon!</h1>
+    </div>
+    <div class="container">
+      <!-- Left carousel button -->
+      <div class="carousel-button previous">
+        <img src="images/leftArrow.PNG" alt="Previous Pokemon">
+      </div>
+      <!-- Pokemon pulled from API -->
+      <div class="pokemon-display-box">
+        <div class="poke1"></div>
+        <div class="poke2"></div>
+        <div class="poke3"></div>
+      </div>
+      <!-- Right carousel button -->
+      <div class="carousel-button next">
+        <img src="images/rightArrow.PNG" alt="Next Pokemon">
+      </div>
+    </div>
+    <button type="button" name="button">I Choose You!</button>
   </div>
-  <div class="container">
-    <!-- Left carousel button -->
-    <div class="carousel-button previous">
-      <img src="images/leftArrow.PNG" alt="Previous Pokemon">
+  <div class="page2">
+    <div class="battle">
+      <h1>Battle!</h1>
     </div>
-    <!-- Pokemon pulled from API -->
-    <div class="pokemon-display-box">
-      <div class="poke1"></div>
-      <div class="poke2"></div>
-      <div class="poke3"></div>
+    <div class="enemy">
+
     </div>
-    <!-- Right carousel button -->
-    <div class="carousel-button next">
-      <img src="images/rightArrow.PNG" alt="Next Pokemon">
+    <div class="player">
+      <div class="poke">
+
+      </div>
+      <div class="actions">
+        <button type="button" name="fight">Fight!</button>
+        <button type="button" name="flea">Run!</button>
+      </div>
     </div>
+
   </div>
 </body>
 </html>
