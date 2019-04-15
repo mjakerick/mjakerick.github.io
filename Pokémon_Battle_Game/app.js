@@ -1,12 +1,13 @@
 $(() => {
 
-
+  let currentPokeIndex = 0;
+  let pokeNum = $('.pokemon-display-box').children().length - 1;
 
   $.ajax({
     url:'https://pokeapi.co/api/v2/pokemon/1/'
   }).then(
     (data)=>{
-        $('.poke1').html(data.name);
+        $('.poke1').text(data.name);
         let pokemonSprite1 = $('<img>')
         .attr('src', data.sprites.front_default)
         .addClass('sprite')
@@ -46,5 +47,36 @@ $(() => {
         console.log('bad request');
     }
   );
+
+  // ============
+  // Event Listeners
+  // ============
+  // next button
+  $('.next').on('click', () => {
+    // hide current image
+    $('.pokemon-display-box').children().eq(currentPokeIndex).hide();
+    // increment the currentImgIndex
+    if(currentPokeIndex < pokeNum) {
+      currentPokeIndex++;
+    } else {
+      currentPokeIndex = 0;
+    }
+    // show next image
+    $('.pokemon-display-box').children().eq(currentPokeIndex).show();
+
+  })
+  // previous button
+  $('.previous').on('click', () => {
+    // hide current image
+    $('.pokemon-display-box').children().eq(currentPokeIndex).hide();
+    // decrement currentImgIndex
+    if(currentPokeIndex > 0){
+      currentPokeIndex--;
+    } else {
+      currentPokeIndex = pokeNum
+    }
+    // show previous images
+    $('.pokemon-display-box').children().eq(currentPokeIndex).show();
+  })
 
 })
