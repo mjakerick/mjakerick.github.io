@@ -8,10 +8,10 @@ $(() => {
   }).then(
     (data)=>{
         $('.poke1').text(data.name);
-        let pokemonSprite1 = $('<img>')
+        let pokemonSprite = $('<img>')
         .attr('src', data.sprites.front_default)
         .addClass('sprite')
-        $('.poke1').append(pokemonSprite1);
+        $('.poke1').append(pokemonSprite);
     },
     ()=>{
         console.log('bad request');
@@ -23,10 +23,10 @@ $(() => {
   }).then(
     (data)=>{
         $('.poke2').html(data.name);
-        let pokemonSprite2 = $('<img>')
+        let pokemonSprite = $('<img>')
         .attr('src', data.sprites.front_default)
         .addClass('sprite')
-        $('.poke2').append(pokemonSprite2);
+        $('.poke2').append(pokemonSprite);
     },
     ()=>{
         console.log('bad request');
@@ -38,10 +38,10 @@ $(() => {
   }).then(
     (data)=>{
         $('.poke3').html(data.name);
-        let pokemonSprite3 = $('<img>')
+        let pokemonSprite = $('<img>')
         .attr('src', data.sprites.front_default)
         .addClass('sprite')
-        $('.poke3').append(pokemonSprite3);
+        $('.poke3').append(pokemonSprite);
     },
     ()=>{
         console.log('bad request');
@@ -82,6 +82,36 @@ $(() => {
   $('button').on('click', () => {
     $('.page1').hide();
     $('.page2').show();
+    const choice = $('.pokemon-display-box').children().eq(currentPokeIndex)
+
+    $('.poke').append(choice);
+
+    $.ajax({
+      url:'https://pokeapi.co/api/v2/pokemon/24/'
+    }).then(
+      (data)=>{
+          $('.enemy').html(data.name);
+          let pokemonSprite = $('<img>')
+          .attr('src', data.sprites.front_default)
+          .addClass('sprite')
+          $('.enemy').append(pokemonSprite);
+      },
+      ()=>{
+          console.log('bad request');
+      }
+    );
   })
+
+  class Pokemon {
+    constructor() {
+      this.hp = Math.floor(Math.random() * (10 - 7 + 1) ) + 7;
+      this.attack = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
+      this.accuracy = (Math.random() * (0.8 - 0.6) + 0.6).toFixed(1)
+    }
+  }
+
+  const fight = () => {
+
+  }
 
 })
