@@ -90,17 +90,17 @@ $(() => {
       let randNum = (Math.round(Math.random(1) * 10) / 10);
       if(randNum <= this.accuracy){
         enemy.hp -= this.attack
-        alert(`The ${enemy.name} was hit by the ${this.name} and now has ${enemy.hp} health`)
+        alert(`The ${enemy.name} was hit by the ${this.name} and now has ${enemy.hp} health! `)
       }else{
         alert(`${this.name}'s attack missed`);
       }
     }
   }
 
-  const player = new Pokemon('Player Pokémon');
+  const player = new Pokemon('Player\'s Pokémon');
   const opponent = new Pokemon('Enemy Pokémon');
 
-  $('button').on('click', () => {
+  $('.switch').on('click', () => {
     $('.page1').hide();
     $('.page2').show();
     const choice = $('.pokemon-display-box').children().eq(currentPokeIndex)
