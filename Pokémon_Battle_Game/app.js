@@ -87,6 +87,10 @@ $(() => {
       this.attack = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
       this.accuracy = (Math.random() * (0.8 - 0.6) + 0.6).toFixed(1);
     };
+    run () {
+      alert(`${this.name} has fled the battle!`)
+      location.reload();
+    }
     fight (enemy) {
       let randNum = (Math.round(Math.random(1) * 10) / 10);
       $(`.${this.type}`).text(`HP: ${this.hp}`);
@@ -97,6 +101,10 @@ $(() => {
         $(`.${enemy.type}`).text(`HP: ${enemy.hp}`);
       }else{
         alert(`${this.name}'s attack missed`);
+      };
+      if(enemy.hp <= 0){
+        alert(`${this.name} knocked out the ${enemy.name}! ${this.name} wins!`);
+        location.reload();
       };
     };
   };
@@ -129,6 +137,15 @@ $(() => {
 
   $('.fight').on('click', () => {
     pokeHp.fight(enemyHp);
-    enemyHp.fight(pokeHp);
+    if(enemyHp.hp <= 0){
+
+    }else{
+      enemyHp.fight(pokeHp);
+    }
   });
+
+  $('.run').on('click', () => {
+    pokeHp.run();
+  });
+
 });
