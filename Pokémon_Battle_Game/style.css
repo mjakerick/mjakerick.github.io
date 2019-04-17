@@ -28,6 +28,11 @@
   width: 180px;
 }
 
+.sprite {
+  /* width: 180px;
+  height: 100px; */
+}
+
 .poke1 img{
   display: block;
   margin-left: auto;
@@ -54,6 +59,13 @@
   width: 100%;
 }
 
+.enemy img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 .next img{
   height: 30px;
   width: 30px;
@@ -67,4 +79,25 @@
 
 .page2 {
   display: none;
+}
+
+.page2 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.battle {
+  text-align: center;
+}
+
+.combat {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.poke {
+
 }

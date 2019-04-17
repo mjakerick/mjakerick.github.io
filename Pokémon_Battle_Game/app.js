@@ -111,7 +111,7 @@ $(() => {
       url:'https://pokeapi.co/api/v2/pokemon/24/'
     }).then(
       (data)=>{
-          $('.enemy').html(data.name);
+          $('.enemy').html(data.name).addClass('text');
           let pokemonSprite = $('<img>')
           .attr('src', data.sprites.front_default)
           .addClass('sprite');
