@@ -79,6 +79,27 @@ $(() => {
     $('.pokemon-display-box').children().eq(currentPokeIndex).show();
   })
 
+  class Pokemon {
+    constructor(name) {
+      this.name = name;
+      this.hp = Math.floor(Math.random() * (10 - 7 + 1) ) + 7;
+      this.attack = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
+      this.accuracy = (Math.random() * (0.8 - 0.6) + 0.6).toFixed(1)
+    }
+    fight (enemy) {
+      let randNum = (Math.round(Math.random(1) * 10) / 10);
+      if(randNum <= this.accuracy){
+        enemy.hp -= this.attack
+        alert(`The ${enemy.name} was hit by the ${this.name} and now has ${enemy.hp} health`)
+      }else{
+        alert(`${this.name}'s attack missed`);
+      }
+    }
+  }
+
+  const player = new Pokemon('Player Pokémon');
+  const opponent = new Pokemon('Enemy Pokémon');
+
   $('button').on('click', () => {
     $('.page1').hide();
     $('.page2').show();
@@ -102,16 +123,8 @@ $(() => {
     );
   })
 
-  class Pokemon {
-    constructor() {
-      this.hp = Math.floor(Math.random() * (10 - 7 + 1) ) + 7;
-      this.attack = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
-      this.accuracy = (Math.random() * (0.8 - 0.6) + 0.6).toFixed(1)
-    }
-  }
-
-  const fight = () => {
-
-  }
-
+  $('.fight').on('click', () => {
+    player.fight(opponent)
+    opponent.fight(player)
+  })
 })
