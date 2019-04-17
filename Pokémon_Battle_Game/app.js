@@ -80,25 +80,29 @@ $(() => {
   });
 
   class Pokemon {
-    constructor(name) {
+    constructor(name,type) {
       this.name = name;
+      this.type = type;
       this.hp = Math.floor(Math.random() * (10 - 7 + 1) ) + 7;
       this.attack = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
       this.accuracy = (Math.random() * (0.8 - 0.6) + 0.6).toFixed(1);
     };
     fight (enemy) {
       let randNum = (Math.round(Math.random(1) * 10) / 10);
+      $(`.${this.type}`).text(`HP: ${this.hp}`);
       if(randNum <= this.accuracy){
         enemy.hp -= this.attack;
+        $(`.${this.type}`).text(`HP: ${this.hp}`);
         alert(`The ${enemy.name} was hit by the ${this.name} and now has ${enemy.hp} health! `);
+        $(`.${enemy.type}`).text(`HP: ${enemy.hp}`);
       }else{
         alert(`${this.name}'s attack missed`);
       };
     };
   };
 
-  const player = new Pokemon('Player\'s Pokémon');
-  const opponent = new Pokemon('Enemy Pokémon');
+  const pokeHp = new Pokemon('Player\'s Pokémon', 'pokeHp');
+  const enemyHp = new Pokemon('Enemy Pokémon', 'enemyHp');
 
   $('.switch').on('click', () => {
     $('.page1').hide();
@@ -124,7 +128,7 @@ $(() => {
   });
 
   $('.fight').on('click', () => {
-    player.fight(opponent);
-    opponent.fight(player);
+    pokeHp.fight(enemyHp);
+    enemyHp.fight(pokeHp);
   });
 });

@@ -59,13 +59,6 @@
   width: 100%;
 }
 
-.enemy img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
 .next img{
   height: 30px;
   width: 30px;
@@ -96,8 +89,4 @@
   position: absolute;
   left: 50%;
   margin-left: -50px;
-}
-
-.poke {
-
 }
