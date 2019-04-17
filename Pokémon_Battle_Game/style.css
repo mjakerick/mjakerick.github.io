@@ -37,6 +37,7 @@
 
 .text{
   text-align: center;
+  text-transform: capitalize;
 }
 
 .poke2 img{
