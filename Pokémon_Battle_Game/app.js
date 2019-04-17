@@ -7,10 +7,10 @@ $(() => {
     url:'https://pokeapi.co/api/v2/pokemon/1/'
   }).then(
     (data)=>{
-        $('.poke1').text(data.name);
+        $('.poke1').text(data.name).addClass('text');
         let pokemonSprite = $('<img>')
         .attr('src', data.sprites.front_default)
-        .addClass('sprite')
+        .addClass('sprite');
         $('.poke1').append(pokemonSprite);
     },
     ()=>{
@@ -22,10 +22,10 @@ $(() => {
     url:'https://pokeapi.co/api/v2/pokemon/4/'
   }).then(
     (data)=>{
-        $('.poke2').html(data.name);
+        $('.poke2').html(data.name).addClass('text');
         let pokemonSprite = $('<img>')
         .attr('src', data.sprites.front_default)
-        .addClass('sprite')
+        .addClass('sprite');
         $('.poke2').append(pokemonSprite);
     },
     ()=>{
@@ -37,10 +37,10 @@ $(() => {
     url:'https://pokeapi.co/api/v2/pokemon/7/'
   }).then(
     (data)=>{
-        $('.poke3').html(data.name);
+        $('.poke3').html(data.name).addClass('text');
         let pokemonSprite = $('<img>')
         .attr('src', data.sprites.front_default)
-        .addClass('sprite')
+        .addClass('sprite');
         $('.poke3').append(pokemonSprite);
     },
     ()=>{
@@ -60,11 +60,11 @@ $(() => {
       currentPokeIndex++;
     } else {
       currentPokeIndex = 0;
-    }
+    };
     // show next image
     $('.pokemon-display-box').children().eq(currentPokeIndex).show();
 
-  })
+  });
   // previous button
   $('.previous').on('click', () => {
     // hide current image
@@ -74,28 +74,28 @@ $(() => {
       currentPokeIndex--;
     } else {
       currentPokeIndex = pokeNum
-    }
+    };
     // show previous images
     $('.pokemon-display-box').children().eq(currentPokeIndex).show();
-  })
+  });
 
   class Pokemon {
     constructor(name) {
       this.name = name;
       this.hp = Math.floor(Math.random() * (10 - 7 + 1) ) + 7;
       this.attack = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
-      this.accuracy = (Math.random() * (0.8 - 0.6) + 0.6).toFixed(1)
-    }
+      this.accuracy = (Math.random() * (0.8 - 0.6) + 0.6).toFixed(1);
+    };
     fight (enemy) {
       let randNum = (Math.round(Math.random(1) * 10) / 10);
       if(randNum <= this.accuracy){
-        enemy.hp -= this.attack
-        alert(`The ${enemy.name} was hit by the ${this.name} and now has ${enemy.hp} health! `)
+        enemy.hp -= this.attack;
+        alert(`The ${enemy.name} was hit by the ${this.name} and now has ${enemy.hp} health! `);
       }else{
         alert(`${this.name}'s attack missed`);
-      }
-    }
-  }
+      };
+    };
+  };
 
   const player = new Pokemon('Player\'s Pokémon');
   const opponent = new Pokemon('Enemy Pokémon');
@@ -103,7 +103,7 @@ $(() => {
   $('.switch').on('click', () => {
     $('.page1').hide();
     $('.page2').show();
-    const choice = $('.pokemon-display-box').children().eq(currentPokeIndex)
+    const choice = $('.pokemon-display-box').children().eq(currentPokeIndex);
 
     $('.poke').append(choice);
 
@@ -114,17 +114,17 @@ $(() => {
           $('.enemy').html(data.name);
           let pokemonSprite = $('<img>')
           .attr('src', data.sprites.front_default)
-          .addClass('sprite')
+          .addClass('sprite');
           $('.enemy').append(pokemonSprite);
       },
       ()=>{
           console.log('bad request');
       }
     );
-  })
+  });
 
   $('.fight').on('click', () => {
-    player.fight(opponent)
-    opponent.fight(player)
-  })
-})
+    player.fight(opponent);
+    opponent.fight(player);
+  });
+});

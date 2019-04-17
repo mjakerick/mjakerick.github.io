@@ -1,6 +1,11 @@
+.choose-pokemon {
+  text-align: center;
+}
+
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .previous img{
@@ -23,13 +28,40 @@
   width: 180px;
 }
 
-.poke1 {
-  align-self: center;
+.poke1 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.text{
+  text-align: center;
+}
+
+.poke2 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.poke3 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .next img{
   height: 30px;
   width: 30px;
+}
+
+.switch {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
 }
 
 .page2 {
