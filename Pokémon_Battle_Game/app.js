@@ -62,13 +62,13 @@ $(() => {
       currentPokeIndex = 0;
     };
     // show next image
-    $('.pokemon-display-box').children().eq(currentPokeIndex).show();
+    $('.pokemon-display-box').children().eq(currentPokeIndex).show('slow');
 
   });
   // previous button
   $('.previous').on('click', () => {
     // hide current image
-    $('.pokemon-display-box').children().eq(currentPokeIndex).hide();
+    $('.pokemon-display-box').children().eq(currentPokeIndex).hide('slow');
     // decrement currentImgIndex
     if(currentPokeIndex > 0){
       currentPokeIndex--;
@@ -113,8 +113,8 @@ $(() => {
   const enemyHp = new Pokemon('Enemy Pokémon', 'enemyHp');
 
   $('.switch').on('click', () => {
-    $('.page1').hide();
-    $('.page2').show();
+    $('.page1').hide('slow');
+    $('.page2').show('slow');
     const choice = $('.pokemon-display-box').children().eq(currentPokeIndex);
 
     $('.poke').append(choice);
