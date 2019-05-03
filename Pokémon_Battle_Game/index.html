@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pokémon Battle Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="app.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Pokémon Battle Game!</h1>
+  </header>
+  <div class="page1">
+    <div class="choose-pokemon">
+      <h1>Choose Your Pokémon:</h1>
+    </div>
+    <div class="container">
+      <!-- Left carousel button -->
+      <div class="carousel-button previous">
+        <img src="images/RedLeftArrow.png" alt="Previous Pokémon">
+      </div>
+      <!-- Pokemon pulled from API -->
+      <div class="pokemon-display-box">
+        <div class="poke1"></div>
+        <div class="poke2"></div>
+        <div class="poke3"></div>
+      </div>
+      <!-- Right carousel button -->
+      <div class="carousel-button next">
+        <img src="images/RedRightArrow.png" alt="Next Pokémon">
+      </div>
+    </div>
+    <button class="switch" type="button" name="button">I Choose You!</button>
+  </div>
+  <div class="page2">
+    <div class="battle">
+      <h1>Battle!</h1>
+    </div>
+    <div class="combat">
+      <div class="opponent">
+        <div class="enemy">
+
+        </div>
+        <div class="enemyHp">
+
+        </div>
+      </div>
+      <div class="player">
+        <div class="poke">
+
+        </div>
+        <div class="pokeHp">
+
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="text-box"></div>
+        <button class="fight" type="button" name="fight">Fight!</button>
+        <button class="run"type="button" name="run">Run!</button>
+      </div>
+      <div class="text">
+
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>
